@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  font-size: 0.8em;
+
+  background: #333;
+  color: #dfdfdf;
+}
+
+a {
+  color:#fa1;
+  font-weight:700;
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #f5a2c6;
+}
+
+a img {
+  border:0;
+}
