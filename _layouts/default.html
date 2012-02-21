@@ -4,8 +4,21 @@
   {% include header.html %}
 </head>
 <body>
-  <h3>{{ page.title }}</h3>
-  <h6>"life is in code"</h6>
-  {{ content }}
+  <div id="wrapper"><!-- Needed for sticky footer. -->
+    {% include banner.html %}
+    <div id="content">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span9">
+            {{ content }}
+          </div>
+          <div class="span3"><!-- Right sidebar -->
+            {% include recentposts.html %}
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
 </body>
 </html>

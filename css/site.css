@@ -1,21 +1,28 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  background-image: url('/img/whitey.png');
+  background-attachment: fixed;
   font-family: sans-serif;
   font-size: 0.8em;
-
-/*  background: #333;*/
-  color: #dfdfdf;
+  color: #000000;
   padding: 15px;
+  min-width: 900px;
 }
 
 a {
-  color:#fa1;
+  color:#FF7711;
   font-weight:700;
   text-decoration:none;
 }
 
 a:hover {
   text-decoration: none;
-  color: #f5a2c6;
+  color: #FFAA11;
 }
 
 a img {
@@ -29,4 +36,48 @@ pre {
 code {
   font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
   border: none;
+}
+
+/* Layout CSS */
+#wrapper {
+  min-height: 100%;
+}
+
+#content {
+  overflow: auto;
+  padding-bottom: 30px;
+}
+
+#footer {
+  position: relative;
+  margin-top: -30px;
+  height: 30px;
+  clear: both;
+  
+  text-align: center;
+}
+
+#banner a {
+  color: #111111;
+  text-shadow: 1px 1px 1px #999999;
+}
+
+#banner h6 {
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+/* Widget CSS */
+.widget h3 {
+  text-shadow: 1px 1px 1px #CCCCCC;
+}
+
+#recent {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* Twitter Bootstrap Overrides */
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
 }
