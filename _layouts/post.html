@@ -2,20 +2,45 @@
 <html>
 <head>
   {% include header.html %}
+  <script>  
+    $(function() {
+      var title = "{{ page.title }}";
+      var link = "http://code.hicapacity.org{{ page.url }}";
+      var url = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(link) + "&t=" + encodeURIComponent(title);
+      
+      $('.share').each(function(index) {
+        $(this).attr('href', url);
+      });
+    });
+  </script>
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  {% include categories.html %}
   <div id="wrapper"><!-- Needed for sticky footer. -->
-    <div id="banner">
-      <h3><a href="/">code/at/hicap</a></h3>
-      <!-- <h3>{{ page.title }}</h3> -->
-      <h6>"life is in code"</h6>
-    </div>  
+    {% include banner.html %}  
     <div id="content">
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span9">
-            <a href="{{ post.url }}">{{ page.title }}</a> by: {{ page.author }}
+            <div style="float: left;">
+              <a href="{{ page.url }}" class="title">{{ page.title }}</a>
+              <div class="postInfo">{{ page.date | date: "%B %e, %Y" }} by {{ page.author }}</div>
+            </div>
+            <div style="float: right; padding-top: 20px;">
+              <a class="share" alt="Share on Facebook">Share on Facebook</a>
+            </div>
+            <div style="clear: both;"></div>
+            <hr/>
             {{ content }}
+            <div class="fb-comments" data-href="http://code.hicapacity.org{{ page.url }}" data-num-posts="2" data-width="660"></div>
           </div>
           <div class="span3"><!-- Right sidebar -->
             {% include recentposts.html %}

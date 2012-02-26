@@ -4,7 +4,15 @@ title: code/at/hicap
 ---
 
 {% for post in site.posts limit:1 %}
-<a href="{{ post.url }}">{{ post.title }}</a> by: {{ post.author }}
+<div style="float: left;">
+  <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+  <div class="postInfo">{{ post.date | date: "%B %e, %Y" }} by {{ post.author }}</div>
+</div>
+<!-- <div style="float: right; padding-top: 22px;">
+  <a class="share" alt="Share on Facebook">Share on Facebook</a>
+</div> -->
+<div style="clear: both;"></div>
+<hr/>
 {{ post.content }}
 {% endfor %}
 
