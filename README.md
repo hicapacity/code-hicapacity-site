@@ -22,6 +22,12 @@ See [https://github.com/mojombo/jekyll/wiki/configuration](https://github.com/mo
 
 See [https://github.com/mojombo/jekyll/wiki/install](https://github.com/mojombo/jekyll/wiki/install) to see how to install Pygments (there are no Windows instructions).
 
+Please make sure gems are at least the versions listed below or there may be issues with Pygments:
+
+* Jekyll (0.11.2)
+* Liquid (2.3.0)
+
+
 #### Contact
 Github: [wangbus](http://github.com/wangbus)
 Twitter: [@wangbus](http://twitter.com/wangbus)
